@@ -96,6 +96,8 @@ On each commit, the following checks run automatically:
 
 These match the CI pipeline, so if your commit passes locally it should pass CI.
 
+To skip hooks for a single commit: `LEFTHOOK=0 git commit`
+
 
 
 | ‣ 𝙏𝙝𝙚 𝙀𝙭𝙚𝙧𝙘𝙞𝙨𝙚 |
