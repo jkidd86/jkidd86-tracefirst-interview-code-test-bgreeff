@@ -10,6 +10,8 @@
 
 # 𝖳𝗋𝖺𝖼𝖾 𝖥𝗂𝗋𝗌𝗍 – 𝖱𝖺𝗂𝗅𝗌 𝖨𝗇𝗍𝖾𝗋𝗏𝗂𝖾𝗐 𝖢𝗈𝖽𝖾 𝖳𝖾𝗌𝗍
 
+[![CI](https://github.com/jkidd86/jkidd86-tracefirst-interview-code-test-bgreeff/actions/workflows/ci.yml/badge.svg)](https://github.com/jkidd86/jkidd86-tracefirst-interview-code-test-bgreeff/actions/workflows/ci.yml)
+
 Welcome 👋
 
 This is a small Rails 8 application used as part of the Trace First technical interview process.
@@ -44,8 +46,6 @@ Ensure you have the following installed:
 
 * Ruby **3.2.x**
 * Rails **8**
-* Node **15+**
-* Yarn **1.22+**
 
 
 If you use a version manager (rbenv, rvm, asdf), we recommend switching to the required Ruby version before setup.
@@ -61,14 +61,14 @@ Clone the repository and run:
 # Install Ruby dependencies
 bundle install
 
-# Install JavaScript dependencies
-yarn install
-
 # Setup the database
 bundle exec rails db:setup
 
 # Build CSS (if required)
 bin/rails dartsass:build
+
+# Install git hooks
+bundle exec lefthook install
 
 # Start the server
 rails s
@@ -79,6 +79,22 @@ Visit:
 ```
 http://localhost:3000
 ```
+
+
+
+| ‣ 𝙂𝙞𝙩 𝙃𝙤𝙤𝙠𝙨 |
+|-------------|
+
+This project uses [Lefthook](https://github.com/evilmartians/lefthook) for pre-commit checks. After `bundle install`, run `bundle exec lefthook install` to activate.
+
+On each commit, the following checks run automatically:
+
+* **RuboCop** – lint staged `.rb` files
+* **Brakeman** – static security analysis
+* **Bundler Audit** – check gems for known vulnerabilities
+* **Importmap Audit** – check JS dependencies for known vulnerabilities
+
+These match the CI pipeline, so if your commit passes locally it should pass CI.
 
 
 

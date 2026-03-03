@@ -77,12 +77,18 @@ GEM
       uri (>= 0.13.1)
     addressable (2.8.8)
       public_suffix (>= 2.0.2, < 8.0)
+    ast (2.4.3)
     base64 (0.3.0)
     bigdecimal (4.0.1)
     bindex (0.8.1)
     bootsnap (1.23.0)
       msgpack (~> 1.2)
+    brakeman (8.0.4)
+      racc
     builder (3.3.0)
+    bundler-audit (0.9.3)
+      bundler (>= 1.2.0)
+      thor (~> 1.0)
     capybara (3.40.0)
       addressable
       matrix
@@ -138,6 +144,12 @@ GEM
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
     json (2.18.1)
+    json-schema (6.1.0)
+      addressable (~> 2.8)
+      bigdecimal (>= 3.1, < 5)
+    language_server-protocol (3.17.0.5)
+    lefthook (2.1.2)
+    lint_roller (1.1.0)
     logger (1.7.0)
     loofah (2.25.0)
       crass (~> 1.0.2)
@@ -150,6 +162,8 @@ GEM
       net-smtp
     marcel (1.1.0)
     matrix (0.4.3)
+    mcp (0.8.0)
+      json-schema (>= 4.1)
     mini_mime (1.1.5)
     minitest (6.0.2)
       drb (~> 2.0)
@@ -169,6 +183,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.1-x86_64-darwin)
       racc (~> 1.4)
+    parallel (1.27.0)
+    parser (3.3.10.2)
+      ast (~> 2.4.1)
+      racc
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -224,6 +242,7 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       tsort (>= 0.2)
       zeitwerk (~> 2.6)
+    rainbow (3.1.1)
     rake (13.3.1)
     rdoc (7.2.0)
       erb
@@ -233,6 +252,36 @@ GEM
     reline (0.6.3)
       io-console (~> 0.5)
     rexml (3.4.4)
+    rubocop (1.85.0)
+      json (~> 2.3)
+      language_server-protocol (~> 3.17.0.2)
+      lint_roller (~> 1.1.0)
+      mcp (~> 0.6)
+      parallel (~> 1.10)
+      parser (>= 3.3.0.2)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 2.9.3, < 3.0)
+      rubocop-ast (>= 1.49.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 4.0)
+    rubocop-ast (1.49.0)
+      parser (>= 3.3.7.2)
+      prism (~> 1.7)
+    rubocop-performance (1.26.1)
+      lint_roller (~> 1.1)
+      rubocop (>= 1.75.0, < 2.0)
+      rubocop-ast (>= 1.47.1, < 2.0)
+    rubocop-rails (2.34.3)
+      activesupport (>= 4.2.0)
+      lint_roller (~> 1.1)
+      rack (>= 1.1)
+      rubocop (>= 1.75.0, < 2.0)
+      rubocop-ast (>= 1.44.0, < 2.0)
+    rubocop-rails-omakase (1.1.0)
+      rubocop (>= 1.72)
+      rubocop-performance (>= 1.24)
+      rubocop-rails (>= 2.30)
+    ruby-progressbar (1.13.0)
     rubyzip (3.2.2)
     sass-embedded (1.97.3-arm64-darwin)
       google-protobuf (~> 4.31)
@@ -260,6 +309,9 @@ GEM
       railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (3.2.0)
+      unicode-emoji (~> 4.1)
+    unicode-emoji (4.2.0)
     uri (1.1.1)
     useragent (0.16.11)
     web-console (4.2.1)
@@ -284,12 +336,15 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.16)
+  brakeman
+  bundler-audit
   capybara (>= 3.39)
   dartsass-rails (~> 0.5)
   debug
   haml-rails (~> 2.1)
   importmap-rails (~> 2.0)
   jbuilder (~> 2.11)
+  lefthook
   net-imap
   net-pop
   net-smtp
@@ -297,6 +352,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rack-mini-profiler (~> 3.0)
   rails (~> 8.0)
+  rubocop-rails-omakase
   selenium-webdriver (>= 4.11)
   sqlite3 (~> 2.1)
   stimulus-rails (~> 1.3)
