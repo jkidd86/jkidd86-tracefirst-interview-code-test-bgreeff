@@ -44,6 +44,20 @@ class VeterinariansControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to veterinarian_url(@veterinarian)
   end
 
+  test 'should not allow admin escalation on create' do
+    post veterinarians_url, params: { veterinarian: { name: 'Mallory',
+                                                      status: 'available',
+                                                      number: '+12125551234',
+                                                      admin: true } }
+    assert_not Veterinarian.last.admin
+  end
+
+  test 'should not allow admin escalation on update' do
+    refute @veterinarian.admin
+    patch veterinarian_url(@veterinarian), params: { veterinarian: { admin: true } }
+    refute @veterinarian.reload.admin
+  end
+
   test 'should destroy veterinarian' do
     assert_difference('Veterinarian.count', -1) do
       delete veterinarian_url(veterinarians(:two))
