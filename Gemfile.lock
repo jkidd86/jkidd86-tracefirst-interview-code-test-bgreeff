@@ -391,9 +391,6 @@ DEPENDENCIES
   importmap-rails (~> 2.0)
   jbuilder (~> 2.11)
   lefthook
-  net-imap
-  net-pop
-  net-smtp
   propshaft
   puma (>= 5.0)
   rack-mini-profiler (~> 3.0)
