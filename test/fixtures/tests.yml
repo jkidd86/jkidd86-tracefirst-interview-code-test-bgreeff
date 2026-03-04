@@ -9,3 +9,9 @@ one:
   veterinarian: one
   name: "Bovine Enteric Disease Panel"
   result: "Negative"
+
+two:
+  animal: with_tests
+  veterinarian: one
+  name: "Tuberculin Skin Test"
+  result: "Positive"

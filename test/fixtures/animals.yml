@@ -13,3 +13,8 @@ two:
   unique_tag: "3241-2434"
   species: "Domestic Cattle"
   breed: "Red angus"
+
+with_tests:
+  unique_tag: "WTS-001"
+  species: "Domestic Cattle"
+  breed: "Hereford"
