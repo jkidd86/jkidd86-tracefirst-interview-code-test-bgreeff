@@ -65,6 +65,8 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara', '>= 3.39'
   gem 'selenium-webdriver', '>= 4.11'
+  # Code coverage [https://github.com/simplecov-ruby/simplecov]
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
