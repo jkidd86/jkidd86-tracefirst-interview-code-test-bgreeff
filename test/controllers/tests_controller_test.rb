@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TestsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @test = tests(:test_one)
+    @test = tests(:one)
   end
 
   test 'should get index' do
@@ -19,8 +19,8 @@ class TestsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Test.count') do
       post tests_url, params: { test: { name: 'Bovine Enteric Disease Panel',
                                         result: 'Positive',
-                                        animal_id: animals(:animal_one).id,
-                                        veterinarian_id: veterinarians(:veterinarian_one).id } }
+                                        animal_id: animals(:one).id,
+                                        veterinarian_id: veterinarians(:one).id } }
     end
 
     assert_redirected_to test_url(Test.last)
@@ -39,8 +39,8 @@ class TestsControllerTest < ActionDispatch::IntegrationTest
   test 'should update test' do
     patch test_url(@test), params: { test: { name: 'Bovine Enteric Disease Panel',
                                              result: 'Negative',
-                                             animal_id: animals(:animal_two).id,
-                                             veterinarian_id: veterinarians(:veterinarian_two).id } }
+                                             animal_id: animals(:two).id,
+                                             veterinarian_id: veterinarians(:two).id } }
     assert_redirected_to test_url(@test)
   end
 

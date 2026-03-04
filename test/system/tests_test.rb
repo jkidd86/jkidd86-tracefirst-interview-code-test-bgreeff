@@ -14,7 +14,7 @@ class TestsTest < ApplicationSystemTestCase
     visit tests_url
     click_on "New Test"
 
-    click_on "Create Test"
+    click_on "Create"
 
     assert_text "Test was successfully created"
     click_on "Back"
@@ -24,7 +24,7 @@ class TestsTest < ApplicationSystemTestCase
     visit tests_url
     click_on "Edit", match: :first
 
-    click_on "Update Test"
+    click_on "Update"
 
     assert_text "Test was successfully updated"
     click_on "Back"

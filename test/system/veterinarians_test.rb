@@ -14,7 +14,7 @@ class VeterinariansTest < ApplicationSystemTestCase
     visit veterinarians_url
     click_on "New Veterinarian"
 
-    click_on "Create Veterinarian"
+    click_on "Create"
 
     assert_text "Veterinarian was successfully created"
     click_on "Back"
@@ -24,7 +24,7 @@ class VeterinariansTest < ApplicationSystemTestCase
     visit veterinarians_url
     click_on "Edit", match: :first
 
-    click_on "Update Veterinarian"
+    click_on "Update"
 
     assert_text "Veterinarian was successfully updated"
     click_on "Back"

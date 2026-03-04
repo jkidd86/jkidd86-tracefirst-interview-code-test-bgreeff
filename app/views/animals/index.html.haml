@@ -1,7 +1,6 @@
-%p#notice= notice
 .row.mt-2
   .col-6
-    %h2
+    %h1
       Animals
 %br
 %table.table
@@ -19,7 +18,7 @@
         %td
           = button_to 'Show', animal_path(animal), method: :get
           = button_to 'Edit', edit_animal_path(animal), method: :get
-          = button_to 'Destroy', animal_path(animal), method: :delete, data: { confirm: 'Are you sure?' }
+          = button_to 'Destroy', animal_path(animal), method: :delete, data: { turbo_confirm: 'Are you sure?' }
 %br
 = link_to 'New Animal', new_animal_path
 

@@ -14,7 +14,7 @@ class AnimalsTest < ApplicationSystemTestCase
     visit animals_url
     click_on "New Animal"
 
-    click_on "Create Animal"
+    click_on "Create"
 
     assert_text "Animal was successfully created"
     click_on "Back"
@@ -24,7 +24,7 @@ class AnimalsTest < ApplicationSystemTestCase
     visit animals_url
     click_on "Edit", match: :first
 
-    click_on "Update Animal"
+    click_on "Update"
 
     assert_text "Animal was successfully updated"
     click_on "Back"

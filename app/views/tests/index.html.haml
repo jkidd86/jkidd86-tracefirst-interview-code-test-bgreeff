@@ -1,7 +1,6 @@
-%p#notice= notice
 .row.mt-2
   .col-6
-    %h2
+    %h1
       Tests
 %br
 %table.table
@@ -21,7 +20,7 @@
         %td
           = button_to 'Show', test_path(test), method: :get
           = button_to 'Edit', edit_test_path(test), method: :get
-          = button_to 'Destroy', test_path(test), method: :delete, data: { confirm: 'Are you sure?' }
+          = button_to 'Destroy', test_path(test), method: :delete, data: { turbo_confirm: 'Are you sure?' }
 %br
 = link_to 'New Test', new_test_path
 
