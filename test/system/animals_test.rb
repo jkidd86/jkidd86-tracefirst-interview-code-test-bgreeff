@@ -1,10 +1,6 @@
 require "application_system_test_case"
 
 class AnimalsTest < ApplicationSystemTestCase
-  setup do
-    @animal = animals(:one)
-  end
-
   test "visiting the index" do
     visit animals_url
     assert_selector "h1", text: "Animals"
@@ -37,5 +33,25 @@ class AnimalsTest < ApplicationSystemTestCase
     end
 
     assert_text "Animal was successfully destroyed"
+  end
+
+  test "destroying an animal with associated tests from index shows error message" do
+    visit animals_url
+
+    row = find("tr", text: animals(:with_tests).unique_tag)
+    accept_confirm do
+      row.click_on "Destroy"
+    end
+
+    assert_text "Animal cannot be deleted while it has associated tests"
+  end
+
+  test "destroying an animal with associated tests from show page shows error message" do
+    visit animal_url(animals(:with_tests))
+    accept_confirm do
+      click_on "Destroy"
+    end
+
+    assert_text "Animal cannot be deleted while it has associated tests"
   end
 end

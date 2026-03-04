@@ -51,6 +51,6 @@ class AnimalsController < ApplicationController
   end
 
   def invalid_foreign_key
-    redirect_to animals_path, notice: 'Animal can not be destroyed.'
+    redirect_to animals_path, notice: 'Animal cannot be deleted while it has associated tests.'
   end
 end
