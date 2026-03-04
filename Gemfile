@@ -56,6 +56,9 @@ group :development do
   gem 'rack-mini-profiler', '~> 3.0'
   # Git hooks manager [https://github.com/evilmartians/lefthook]
   gem 'lefthook', require: false
+  # File watcher for auto-running tests [https://github.com/guard/guard]
+  gem 'guard', require: false
+  gem 'guard-minitest', require: false
 end
 
 group :test do

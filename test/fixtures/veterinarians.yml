@@ -4,13 +4,13 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-veterinarian_one:
+one:
   name: "Bob"
   status: "available"
   admin: false
   number: "+08763728495"
 
-veterinarian_two:
+two:
   name: "Jane"
   status: "offline"
   admin: true

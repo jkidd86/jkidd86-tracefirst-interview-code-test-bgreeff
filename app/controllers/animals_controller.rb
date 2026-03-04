@@ -16,7 +16,7 @@ class AnimalsController < ApplicationController
 
   def update
     if @animal.update(animal_params)
-      redirect_to animal_path(@animal)
+      redirect_to animal_path(@animal), notice: 'Animal was successfully updated.'
     else
       render 'edit'
     end
@@ -26,7 +26,7 @@ class AnimalsController < ApplicationController
     @animal = Animal.new(animal_params)
 
     if @animal.save
-      redirect_to animal_path(@animal)
+      redirect_to animal_path(@animal), notice: 'Animal was successfully created.'
     else
       render 'new'
     end

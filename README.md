@@ -100,6 +100,19 @@ To skip hooks for a single commit: `LEFTHOOK=0 git commit`
 
 
 
+| ‣ 𝙂𝙪𝙖𝙧𝙙 |
+|-------------|
+
+Auto-runs matching tests when model or controller files change:
+
+```bash
+bundle exec guard
+```
+
+System tests are excluded — run manually with `bundle exec rails test:system`.
+
+
+
 | ‣ 𝙏𝙝𝙚 𝙀𝙭𝙚𝙧𝙘𝙞𝙨𝙚 |
 |-------------|
 

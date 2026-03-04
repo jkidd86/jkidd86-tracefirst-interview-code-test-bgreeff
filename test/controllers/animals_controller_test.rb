@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AnimalsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @animal = animals(:animal_one)
+    @animal = animals(:one)
   end
 
   test 'should get index' do
@@ -44,7 +44,7 @@ class AnimalsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should destroy animal' do
     assert_difference('Animal.count', -1) do
-      delete animal_url(animals(:animal_two))
+      delete animal_url(animals(:two))
     end
 
     assert_redirected_to animals_url

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+
+# script -q preserves colors when piping through tee
+exec script -q /dev/null bundle exec guard "$@" 2>&1 | tee tmp/guard.log

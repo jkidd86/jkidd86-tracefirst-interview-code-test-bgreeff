@@ -17,4 +17,6 @@
       = nav_link 'Veterinarian', veterinarians_path
       = nav_link 'Tests', tests_path
     .container-fluid
+      - if notice.present?
+        %p#notice= notice
       = yield
