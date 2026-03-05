@@ -1,0 +1,9 @@
+%tr
+  %td= test.name
+  %td= test.result
+  %td= test.animal&.unique_tag
+  %td= test.veterinarian&.name
+  %td
+    = button_to 'Show', test_path(test), method: :get
+    = button_to 'Edit', edit_test_path(test), method: :get
+    = button_to 'Destroy', test_path(test), method: :delete, data: { turbo_confirm: 'Are you sure?' }
