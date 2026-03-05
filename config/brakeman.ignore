@@ -1,11 +1,7 @@
 {
   "ignored_warnings": [
-    {
+{
       "fingerprint": "40be17ee84017c91503dab23873e24bdd71665ab665bf6f351cfc09ff83e6582",
-      "note": "Issue #3 - permit! will be replaced with explicit params"
-    },
-    {
-      "fingerprint": "554f2244df80d7764a8b4016704b164715c2650c4854888e7d3a20dd789437e5",
       "note": "Ruby 3.2 EOL - upgrade to 3.3 planned"
     }
   ]
