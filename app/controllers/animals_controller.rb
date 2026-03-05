@@ -33,7 +33,7 @@ class AnimalsController < ApplicationController
   end
 
   def destroy
-    if @animal.destroy
+    if @animal.discard
       redirect_to animals_path, notice: 'Animal was successfully destroyed'
     else
       redirect_to animals_path, error: 'Animal could not be destroyed'

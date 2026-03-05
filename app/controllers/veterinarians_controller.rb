@@ -41,7 +41,7 @@ class VeterinariansController < ApplicationController
   end
 
   def destroy
-    @veterinarian.destroy
+    @veterinarian.discard
     respond_to do |format|
       format.html { redirect_to veterinarians_url, notice: 'Veterinarian was successfully destroyed.' }
       format.json { head :no_content }
@@ -59,6 +59,6 @@ class VeterinariansController < ApplicationController
   end
 
   def invalid_foreign_key
-    redirect_to veterinarians_path, notice: 'Veterinarian can not be destroyed.'
+    redirect_to veterinarians_path, notice: 'Veterinarian cannot be deleted while it has associated tests.'
   end
 end

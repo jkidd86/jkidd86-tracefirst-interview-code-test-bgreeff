@@ -31,6 +31,8 @@ gem 'haml-rails', '~> 2.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.16', require: false
 
+gem "discard", "~> 1.4"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
