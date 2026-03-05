@@ -4,7 +4,7 @@ class TestsController < ApplicationController
   rescue_from ActiveRecord::InvalidForeignKey, with: :invalid_foreign_key
 
   def index
-    @tests = Test.all
+    @tests = Test.preload(:animal, :veterinarian)
 
     @tests = @tests.where(result: params[:result]) if params[:result].present?
   end
