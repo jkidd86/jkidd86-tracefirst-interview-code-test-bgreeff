@@ -55,7 +55,7 @@ class VeterinariansController < ApplicationController
   end
 
   def veterinarian_params
-    params.require(:veterinarian).permit!
+    params.require(:veterinarian).permit(:name, :status, :number)
   end
 
   def invalid_foreign_key
