@@ -11,7 +11,7 @@ module SoftDeletable
     def dont_orphan(*associations)
       before_discard do
         associations.each do |assoc|
-          raise ActiveRecord::InvalidForeignKey, "Cannot discard #{model_name.human.downcase} with associated #{assoc}" if send(assoc).any?
+          raise ActiveRecord::InvalidForeignKey, "Cannot discard #{model_name.human.downcase} with associated #{assoc}" if send(assoc).exists?
         end
       end
     end
