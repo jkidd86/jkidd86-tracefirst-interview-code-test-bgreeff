@@ -38,4 +38,24 @@ class VeterinariansTest < ApplicationSystemTestCase
 
     assert_text "Veterinarian was successfully destroyed"
   end
+
+  test "destroying a veterinarian with associated tests from index shows error message" do
+    visit veterinarians_url
+
+    row = find("tr", text: veterinarians(:with_tests).name)
+    accept_confirm do
+      row.click_on "Destroy"
+    end
+
+    assert_text "Veterinarian cannot be deleted while it has associated tests"
+  end
+
+  test "destroying a veterinarian with associated tests from show page shows error message" do
+    visit veterinarian_url(veterinarians(:with_tests))
+    accept_confirm do
+      click_on "Destroy"
+    end
+
+    assert_text "Veterinarian cannot be deleted while it has associated tests"
+  end
 end

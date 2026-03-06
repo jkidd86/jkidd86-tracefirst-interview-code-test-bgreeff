@@ -15,3 +15,9 @@ two:
   status: "offline"
   admin: true
   number: "+24986502759"
+
+with_tests:
+  name: "Dr. Tests"
+  status: "available"
+  admin: false
+  number: "+18005551234"

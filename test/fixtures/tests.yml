@@ -12,6 +12,6 @@ one:
 
 two:
   animal: with_tests
-  veterinarian: one
+  veterinarian: with_tests
   name: "Tuberculin Skin Test"
   result: "Positive"
