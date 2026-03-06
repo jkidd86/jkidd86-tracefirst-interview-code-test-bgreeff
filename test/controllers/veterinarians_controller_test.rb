@@ -49,7 +49,8 @@ class VeterinariansControllerTest < ActionDispatch::IntegrationTest
                                                       status: 'available',
                                                       number: '+12125551234',
                                                       admin: true } }
-    assert_not Veterinarian.last.admin
+    vet = Veterinarian.find(response.location.match(/veterinarians\/(\d+)/)[1])
+    assert_not vet.admin
   end
 
   test 'should not allow admin escalation on update' do

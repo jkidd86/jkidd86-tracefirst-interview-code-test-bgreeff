@@ -1,6 +1,6 @@
 {
   "ignored_warnings": [
-{
+    {
       "fingerprint": "40be17ee84017c91503dab23873e24bdd71665ab665bf6f351cfc09ff83e6582",
       "note": "Ruby 3.2 EOL - upgrade to 3.3 planned"
     }
